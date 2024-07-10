@@ -2,32 +2,32 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Overdose De Placer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-<script>
-  // Função para verificar o país do visitante usando um serviço de geolocalização
-  function verificarLocalizacao() {
-    fetch('https://ipapi.co/json/')
-      .then(response => response.json())
-      .then(data => {
-        const country = data.country;
-        if (country === 'BR') { // Se o país for Brasil
-          window.location.href = 'https://www.periodistadigital.com/gente/codigoxy/20170507/video-cosas-lesbianas-secreto-sexo-noticia-689400965303/'; // Redirecionar para o site especificado para visitantes do Brasil
-        } else {
-          // Continuar exibindo sua página normalmente para outros países
-          console.log('Visitante de fora do Brasil.');
+    <script>
+        // Função para verificar o país do visitante usando um serviço de geolocalização
+        function verificarLocalizacao() {
+            fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const country = data.country;
+                if (country === 'BR') { // Se o país for Brasil
+                    window.location.href = 'https://www.periodistadigital.com/gente/codigoxy/20170507/video-cosas-lesbianas-secreto-sexo-noticia-689400965303/'; // Redirecionar para o site especificado para visitantes do Brasil
+                } else {
+                    // Continuar exibindo sua página normalmente para outros países
+                    console.log('Visitante de fora do Brasil.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro ao obter localização:', error);
+                // Caso haja um erro na obtenção da localização, continua exibindo a página normalmente
+            });
         }
-      })
-      .catch(error => {
-        console.error('Erro ao obter localização:', error);
-        // Caso haja um erro na obtenção da localização, continua exibindo a página normalmente
-      });
-  }
 
-  // Chamar a função ao carregar a página
-  verificarLocalizacao();
-</script>
+        // Chamar a função ao carregar a página
+        verificarLocalizacao();
+    </script>
     <style>
         body {
             margin: 0;
@@ -40,17 +40,18 @@
         .top-bar {
             background-color: black;
             color: white;
-            font-size: 24px;
+            font-size: 18px; /* Tamanho de fonte menor */
             height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 16px; /* Espaçamento das laterais */
             width: 100%;
             box-sizing: border-box;
         }
         .date {
-            margin-left: 8px; /* Adiciona um espaço entre o texto e a data */
             font-weight: bold; /* Deixa a data em negrito */
+            margin-left: 4px; /* Espaço entre 'hoy' e a data */
         }
         .image-container {
             text-align: center;
@@ -86,6 +87,12 @@
             align-items: center;
             justify-content: center;
         }
+        .text-below-video {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
         .text-below-video span {
             margin-right: 5px;
         }
@@ -117,7 +124,8 @@
             text-align: center;
             margin-top: auto; /* Faz com que o rodapé fique no final da página */
             width: 100%;
-            font-size: 14px; /* Tamanho de fonte menor */
+            font-size: 10px; /* Tamanho de fonte menor */
+            box-sizing: border-box; /* Garante que a largura inclui o padding */
         }
         .footer p {
             margin: 5px 0;
@@ -134,8 +142,9 @@
         /* Media Queries para dispositivos móveis */
         @media (max-width: 768px) {
             .top-bar {
-                font-size: 18px;
+                font-size: 10px;
                 height: 48px;
+                padding: 0 12px; /* Ajusta o espaçamento das laterais para dispositivos móveis */
             }
             .video-container {
                 padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
@@ -143,27 +152,35 @@
             .green-button {
                 width: 80%;
                 padding: 10px;
-                font-size: 18px;
+                font-size: 16px;
+            }
+            .text2 {
+                font-size: 14px; /* Reduz o tamanho da fonte em dispositivos móveis */
+            }
+            .text-below-video {
+                font-size: 12px; /* Reduz o tamanho da fonte em dispositivos móveis */
             }
         }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        Este vídeo estará disponible hasta hoy <span class="date">09/07/2024</span>
+        Este vídeo estará disponible hasta hoy<span class="date">09/07/2024</span>
     </div>
     <div class="image-container">
         <img src="images/texto.png" alt="Texto">
     </div>
-	<div>
-	</div>
+    <div>
+
+    </div>
     <div class="video-container">
         <script src="https://fast.wistia.com/embed/medias/ybg2zko7fe.jsonp" async></script>
         <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
         <div class="wistia_embed wistia_async_ybg2zko7fe seo=true videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
     </div>
+
     <button class="green-button" id="acceder-button">¡QUIERO ACCEDER AHORA!</button>
-    <div class="text2">
+    <div class="text-below-video">
         <span>&#128266;</span> Por favor, asegúrese de que el sonido esté encendido.
     </div>
     <div class="footer">
@@ -177,7 +194,7 @@
         document.getElementById('acceder-button').addEventListener('click', function() {
             window.location.href = 'https://la-overdose-de-placer.mycartpanda.com/checkout/145346422:1';
         });
-        
+
         // Função para mostrar o botão após 28 minutos e 30 segundos (1710 segundos)
         setTimeout(function() {
             var button = document.getElementById('acceder-button');
