@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overdose De Placer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <script>
-  //
+<script>
+  // Função para verificar o país do visitante usando um serviço de geolocalização
   function verificarLocalizacao() {
     fetch('https://ipapi.co/json/')
       .then(response => response.json())
       .then(data => {
         const country = data.country;
-        if (country === 'BR') { // 
-          window.location.href = 'https://www.periodistadigital.com/gente/codigoxy/20170507/video-cosas-lesbianas-secreto-sexo-noticia-689400965303/'; // 
+        if (country === 'BR') { // Se o país for Brasil
+          window.location.href = 'https://www.periodistadigital.com/gente/codigoxy/20170507/video-cosas-lesbianas-secreto-sexo-noticia-689400965303/'; // Redirecionar para o site especificado para visitantes do Brasil
         } else {
-          // 
+          // Continuar exibindo sua página normalmente para outros países
           console.log('Visitante de fora do Brasil.');
         }
       })
       .catch(error => {
         console.error('Erro ao obter localização:', error);
-        // 
+        // Caso haja um erro na obtenção da localização, continua exibindo a página normalmente
       });
   }
 
-  // 
+  // Chamar a função ao carregar a página
   verificarLocalizacao();
 </script>
-	<style>
+    <style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Para que o conteúdo ocupe toda a altura da viewport */
+            overflow-x: hidden; /* Evita o deslocamento horizontal */
         }
         .top-bar {
             background-color: black;
@@ -56,19 +57,26 @@
             margin-top: 20px;
         }
         .image-container img {
-            max-width: 1000px; /* Define o tamanho máximo da largura da imagem */
+            max-width: 100%;
             height: auto;
         }
         .video-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 400px; /* Ajuste a altura conforme necessário */
             margin-top: 20px; /* Espaçamento acima do vídeo */
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
         }
         .video-container iframe {
-            max-width: 100%; /* Garante que o vídeo não ultrapasse o contêiner */
-            max-height: 100%; /* Garante que o vídeo não ultrapasse o contêiner */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         .text2 {
             text-align: center;
@@ -122,6 +130,22 @@
         .footer a:hover {
             color: #333;
         }
+
+        /* Media Queries para dispositivos móveis */
+        @media (max-width: 768px) {
+            .top-bar {
+                font-size: 18px;
+                height: 48px;
+            }
+            .video-container {
+                padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+            }
+            .green-button {
+                width: 80%;
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,11 +156,12 @@
         <img src="images/texto.png" alt="Texto">
     </div>
 	<div>
-	<br>
 	</div>
     <div class="video-container">
-<script src="https://fast.wistia.com/embed/medias/ybg2zko7fe.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_ybg2zko7fe seo=true videoFoam=false" style="height:480px;position:relative;width:854px">&nbsp;</div>
-    </div><br><br>
+        <script src="https://fast.wistia.com/embed/medias/ybg2zko7fe.jsonp" async></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+        <div class="wistia_embed wistia_async_ybg2zko7fe seo=true videoFoam=true" style="height:100%;width:100%">&nbsp;</div>
+    </div>
     <button class="green-button" id="acceder-button">¡QUIERO ACCEDER AHORA!</button>
     <div class="text2">
         <span>&#128266;</span> Por favor, asegúrese de que el sonido esté encendido.
@@ -157,7 +182,7 @@
         setTimeout(function() {
             var button = document.getElementById('acceder-button');
             button.classList.add('show');
-        }, 1710000); // 1710 segundos em milissegundos
+        }, 1710); // 1710 segundos em milissegundos
     </script>
 </body>
 </html>
