@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overdose De Placer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Para que o conteúdo ocupe toda a altura da viewport */
+        }
+        .top-bar {
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .date {
+            margin-left: 8px; /* Adiciona um espaço entre o texto e a data */
+            font-weight: bold; /* Deixa a data em negrito */
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 1000px; /* Define o tamanho máximo da largura da imagem */
+            height: auto;
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px; /* Ajuste a altura conforme necessário */
+            margin-top: 20px; /* Espaçamento acima do vídeo */
+        }
+        .video-container iframe {
+            max-width: 100%; /* Garante que o vídeo não ultrapasse o contêiner */
+            max-height: 100%; /* Garante que o vídeo não ultrapasse o contêiner */
+        }
+        .text2 {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .text-below-video span {
+            margin-right: 5px;
+        }
+        .green-button {
+            background-color: #3be20e;
+            color: white;
+            font-size: 22px;
+            font-weight: bold; /* Texto em negrito */
+            text-transform: uppercase;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            display: none; /* Inicia oculto */
+            margin: 20px auto;
+            border-radius: 6px; /* Bordas um pouco arredondadas */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra no botão */
+            transition: box-shadow 0.3s ease; /* Transição suave da sombra */
+        }
+        .green-button.show {
+            display: block; /* Mostra o botão quando a classe 'show' é adicionada */
+        }
+        .green-button:hover {
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+            opacity: 0.8;
+        }
+        .footer {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto; /* Faz com que o rodapé fique no final da página */
+            width: 100%;
+            font-size: 14px; /* Tamanho de fonte menor */
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #666;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        Este vídeo estará disponible hasta hoy <span class="date">09/07/2024</span>
+    </div>
+    <div class="image-container">
+        <img src="images/texto.png" alt="Texto">
+    </div>
+	<div>
+	<br>
+	</div>
+    <div class="video-container">
+<script src="https://fast.wistia.com/embed/medias/ybg2zko7fe.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_embed wistia_async_ybg2zko7fe seo=true videoFoam=false" style="height:480px;position:relative;width:854px">&nbsp;</div>
+    </div><br><br>
+    <button class="green-button" id="acceder-button">¡QUIERO ACCEDER AHORA!</button>
+    <div class="text2">
+        <span>&#128266;</span> Por favor, asegúrese de que el sonido esté encendido.
+    </div>
+    <div class="footer">
+        <p>Copyright 2024 - Overdose de Placer ®</p>
+        <p>Todos los Direitos Reservados</p>
+        <p><a href="#">Términos de Uso</a> · <a href="#">Privacidad</a></p>
+    </div>
+
+    <script>
+        // Função para redirecionar para o link ao clicar no botão
+        document.getElementById('acceder-button').addEventListener('click', function() {
+            window.location.href = 'https://la-overdose-de-placer.mycartpanda.com/checkout/145346422:1';
+        });
+        
+        // Função para mostrar o botão após 28 minutos e 30 segundos (1710 segundos)
+        setTimeout(function() {
+            var button = document.getElementById('acceder-button');
+            button.classList.add('show');
+        }, 1710000); // 1710 segundos em milissegundos
+    </script>
+</body>
+</html>
