@@ -25,6 +25,15 @@
             });
         }
 
+        // Função para obter a data atual no formato dd/mm/yyyy
+        function getDataAtual() {
+            const data = new Date();
+            const dia = data.getDate().toString().padStart(2, '0');
+            const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+            const ano = data.getFullYear();
+            return `${dia}/${mes}/${ano}`;
+        }
+
         // Chamar a função ao carregar a página
         verificarLocalizacao();
     </script>
@@ -144,7 +153,7 @@
             .top-bar {
                 font-size: 14px;
                 height: 48px;
-                padding: 0 14px; /* Ajusta o espaçamento das laterais para dispositivos móveis */
+                padding: 0 12px; /* Ajusta o espaçamento das laterais para dispositivos móveis */
             }
             .video-container {
                 padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
@@ -165,13 +174,10 @@
 </head>
 <body>
     <div class="top-bar">
-        Este vídeo estará disponible hasta hoy<span class="date">10/07/2024</span>
+        Este vídeo estará disponible hasta hoy<span class="date" id="dataAtual"></span>
     </div>
     <div class="image-container">
         <img src="images/texto.png" alt="Texto">
-    </div>
-    <div>
-
     </div>
     <div class="video-container">
         <script src="https://fast.wistia.com/embed/medias/ybg2zko7fe.jsonp" async></script>
@@ -200,6 +206,9 @@
             var button = document.getElementById('acceder-button');
             button.classList.add('show');
         }, 1710000); // 1710 segundos em milissegundos
+
+        // Atualizar a data atual dinamicamente
+        document.getElementById('dataAtual').textContent = getDataAtual();
     </script>
 </body>
 </html>
