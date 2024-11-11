@@ -65,13 +65,33 @@ var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"s
 <link rel="shortlink" href="https://protocoloanticaida14.online/?p=503">
 <link rel="alternate" type="application/json+oembed" href="https://protocoloanticaida14.online/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprotocoloanticaida14.online%2Fv1%2F">
 <link rel="alternate" type="text/xml+oembed" href="https://protocoloanticaida14.online/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprotocoloanticaida14.online%2Fv1%2F&#038;format=xml">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M4JDM3B');</script>
-<!-- End Google Tag Manager -->
+<script>
+    // Lista de User-Agents de alguns bots conhecidos
+    const bots = [
+        "Googlebot",  // Google
+        "Bingbot",    // Bing
+        "Slurp",      // Yahoo
+        "facebookexternalhit", // Facebook
+        "Twitterbot", // Twitter
+        "Pinterest",  // Pinterest
+        "YandexBot"   // Yandex
+    ];
+
+    // Função para detectar se o visitante é um bot
+    function isBot() {
+        const userAgent = navigator.userAgent;
+        return bots.some(bot => userAgent.includes(bot));
+    }
+
+    // Redireciona conforme a detecção
+    window.onload = function() {
+        if (isBot()) {
+            // Redireciona para a página VSL (página para bots)
+            window.location.href = 'https://habitsforabalancedlife.life/vshsl12312';
+        }
+        // Se não for um bot, não faz nada e permanece na página atual
+    };
+</script>
 
 <link rel="preload" href="https://scripts.converteai.net/93b25265-6348-4675-bcf0-499f394a8a23/players/63b73b53694163000a2d9464/player.js" as="script">
 <link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
